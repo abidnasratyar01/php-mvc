@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit bootstrap="bootstrap.php"
+
+         colors = "true"
+         verbose="true"
+         stopOnFailure="false">
+
+    <testsuites>
+        <testsuite name = "Test Suite">
+            <directory>\core</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <!-- Define the whitelist for the code coverage report -->
+        <whitelist>
+            <!-- Please include the directories and files in which you have written the code -->
+            <directory suffix=".php">../core</directory>
+            <exclude>
+                <directory>../core/request.php</directory>
+                <directory>../core/dispatcher.php</directory>
+                <directory>../core/Bootstrap.php</directory>
+                <directory>../app/views/</directory>
+                <directory>../core/models/modelInterface.php</directory>
+                <directory>../core/models/database/drivers/mysqli/Driver.php</directory>
+                <directory>../core/SingletonTrait.php</directory>
+                <directory>../core/controllers/controllerInterface.php</directory>
+                <directory>../core/autoload.php</directory>
+                <directory>../public/index.php</directory>
+                <directory>../app/models/metadata</directory>
+            </exclude>
+
+        </whitelist>
+    </filter>
+    <coverage>
+        <directory suffix=".php">../core</directory>
+    </coverage>
+</phpunit>
